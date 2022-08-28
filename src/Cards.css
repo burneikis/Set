@@ -1,10 +1,3 @@
-.Cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    max-width: 80vw;
-    margin: auto;
-}
 img {
-    height: 15vh;
+  height: 15vh;
 }

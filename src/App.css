@@ -5,3 +5,10 @@ header {
   font-size: larger;
   font-weight: bold;
 }
+.App-body {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 80vw;
+  margin: auto;
+}
