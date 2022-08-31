@@ -188,6 +188,7 @@ function Cards() {
     } else {
     event.currentTarget.style.border = "1px solid black";
     }
+    
   };
 
   return playCards.map((card, index) => {
