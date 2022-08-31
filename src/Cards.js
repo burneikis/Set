@@ -182,27 +182,8 @@ function getCardImage(card) {
 }
 
 function Cards() {
-  const handleClick = (event) => {
-    if (event.currentTarget.style.border === "1px solid black") {
-      event.currentTarget.style.border = "1px solid white";
-    } else {
-    event.currentTarget.style.border = "1px solid black";
-    }
-    
-  };
-
   return playCards.map((card, index) => {
-    return (
-      <img
-      style={{
-        border: "1px solid white",
-      }}
-        key={index}
-        alt="card"
-        src={getCardImage(card)}
-        onClick={handleClick}
-      ></img>
-    );
+    return <img key={index} alt="card" src={getCardImage(card)}></img>;
   });
 }
 
