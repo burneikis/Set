@@ -156,7 +156,9 @@ function getCards() {
 }
 
 function shuffle(array) {
-  let currentIndex = array.length, temporaryValue, randomIndex;
+  let currentIndex = array.length,
+    temporaryValue,
+    randomIndex;
 
   while (0 !== currentIndex) {
     randomIndex = Math.floor(Math.random() * currentIndex);
@@ -180,8 +182,26 @@ function getCardImage(card) {
 }
 
 function Cards() {
+  const handleClick = (event) => {
+    if (event.currentTarget.style.border === "1px solid black") {
+      event.currentTarget.style.border = "1px solid white";
+    } else {
+    event.currentTarget.style.border = "1px solid black";
+    }
+  };
+
   return playCards.map((card, index) => {
-    return <img key={index} alt="card" src={getCardImage(card)}></img>;
+    return (
+      <img
+      style={{
+        border: "1px solid white",
+      }}
+        key={index}
+        alt="card"
+        src={getCardImage(card)}
+        onClick={handleClick}
+      ></img>
+    );
   });
 }
 
