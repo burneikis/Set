@@ -150,6 +150,8 @@ function getCards() {
       availableCards.splice(randomIndex, 1);
     }
   
+console.log(sameCount, sameColor, sameShape, sameFill);
+
     return cards;
   }
   

@@ -9,7 +9,6 @@ function Card(props) {
   let number = props.number;
 
   function handleClick() {
-    console.log(selectedCards.length)
     setSelected(false)
     handleSelectedCards(card)
     if (selectedCards.includes(card)) {
