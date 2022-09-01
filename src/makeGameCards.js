@@ -114,7 +114,7 @@ const allCards = [
 ];
 
 function getCards() {
-  let availableCards = allCards;
+  let availableCards = Array.from(allCards);
   let cards = [];
 
   let sameCount = false;
@@ -175,11 +175,31 @@ function getCards() {
     availableCards.splice(randomIndex, 1);
   }
 
+  while (cards.length < 12) {
+    randomIndex = Math.floor(Math.random() * availableCards.length);
+    cards.push(availableCards[randomIndex]);
+    availableCards.splice(randomIndex, 1);
+  }
+
   return cards;
 }
 
-let playCards = getCards();
+function shuffle(array) {
+  let currentIndex = array.length,
+    temporaryValue,
+    randomIndex;
 
-console.log(playCards[0]);
-console.log(playCards[1]);
-console.log(playCards[2]);
+  while (0 !== currentIndex) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
+
+let playCards = getCards();
+playCards = shuffle(playCards);

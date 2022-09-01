@@ -1,4 +1,5 @@
 import "./Cards.css";
+import Card from "./Card.js";
 
 const allCards = [
   [0, 0, 0, 0],
@@ -175,15 +176,13 @@ function shuffle(array) {
 let playCards = getCards();
 playCards = shuffle(playCards);
 
-function getCardImage(card) {
-  let index = allCards.indexOf(card);
-  index += 1;
-  return `./assets/${index}.png`;
+function getCardNumber(card) {
+  return allCards.indexOf(card) + 1;
 }
 
 function Cards() {
   return playCards.map((card, index) => {
-    return <img key={index} alt="card" src={getCardImage(card)}></img>;
+    return <Card key={index} card={card} number={getCardNumber(card)}/>
   });
 }
 
