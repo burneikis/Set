@@ -1,5 +1,6 @@
 import "./App.css";
 import Cards from "./Cards";
+import React from "react";
 
 function App() {
   return (
